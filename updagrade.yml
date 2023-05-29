@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  - name: Update and Upgrade apt packages on Debian_Ubuntu servers  
+    apt:
+      update_cache: yes
+      upgrade: dist
