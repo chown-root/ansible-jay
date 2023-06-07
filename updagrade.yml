@@ -3,20 +3,16 @@
 - hosts: all
   become: true
   tasks:
-  - name: Update and Upgrade apt packages on Debian_Ubuntu servers  
+
+  - name: Update and Upgrade Debian_Ubuntu servers
     apt:
       update_cache: yes
       upgrade: dist
 
 
-  - name: install apache2 package
-    apt:
-      name: apache2
+  - name: Install apache and php
+    package: 
+      name:
+      - "{{ apache_package }}"
+      - "{{ php_package }}"
       state: latest
-    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu' 
-  
-  - name: add php support for apache
-    apt: 
-      name: libapache2-mod-php
-      state: latest
-    when: ansible_distribution == "Debian" or ansible_distribution == 'Ubuntu' 
