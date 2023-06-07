@@ -1,4 +1,10 @@
-#172.16.60.5 ansible_port=22022
-#172.16.60.10 ansible_port=22022
+[web_servers]
+172.16.60.5 ansible_port=22022
+
+[db_servers]
+172.16.60.10 ansible_port=22022
+
+[file_servers]
 94.130.229.11 ansible_port=22022
 195.201.120.35 ansible_port=22022
+
